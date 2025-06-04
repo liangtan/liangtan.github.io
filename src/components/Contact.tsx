@@ -12,7 +12,11 @@ const Contact: React.FC = () => {
     <>
       <Const>const</Const>{" "}
       <FunctionName>email</FunctionName>{" "}
-      = <StringLiteral>"liang@example.com"</StringLiteral>
+      = <StringLiteral>
+        "<a href="mailto:liangtan@me.com" style={{ color: "inherit", textDecoration: "none" }}>
+        liangtan@me.com
+      </a>"
+      </StringLiteral>
       {"; "}
       <Comment>
 		    // <IconWrapper><FiMail/></IconWrapper>
@@ -21,7 +25,11 @@ const Contact: React.FC = () => {
     <>
       <Const>const</Const>{" "}
       <FunctionName>github</FunctionName>{" "}
-      = <StringLiteral>"https://github.com/liangtan"</StringLiteral>;
+      = <StringLiteral>
+        "<a href="https://github.com/liangtan" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+          https://github.com/liangtan
+        </a>"
+      </StringLiteral>
       {"; "}
       <Comment>
       // <IconWrapper><FiGithub/></IconWrapper>
@@ -30,7 +38,11 @@ const Contact: React.FC = () => {
     <>
       <Const>const</Const>{" "}
       <FunctionName>linkedin</FunctionName>{" "}
-      = <StringLiteral>"https://linkedin.com/in/liangtan521"</StringLiteral>;
+      = <StringLiteral>
+        "<a href="https://linkedin.com/in/liangtan521" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+          https://linkedin.com/in/liangtan521
+        </a>"
+      </StringLiteral>
       {"; "}
       <Comment>
       // <IconWrapper><FiLinkedin/></IconWrapper>
@@ -40,7 +52,7 @@ const Contact: React.FC = () => {
 
   return (
     <div style={codeWrapperStyle}>
-    <LineNumber count={lines.length}></LineNumber>
+      <LineNumber count={lines.length}></LineNumber>
       <pre style={codeStyle}>
         {lines.map((line, i) => (
           <div key={i} className={styles.line}>
