@@ -2,14 +2,13 @@
   "name": "me2",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://liangtan.github.io/me",
+  "homepage": "https://liangtan.github.io",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.1.0",
