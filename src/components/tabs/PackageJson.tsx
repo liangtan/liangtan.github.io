@@ -1,8 +1,8 @@
 import { type FC } from "react";
-import styles from "./AboutMe.module.scss";
-import Editor from "./Editor";
-import LineNumber from "./LineNumber";
-import { ClosingCurlyBrace, JsonKey, OpeningCurlyBrace } from "./Shared";
+import globalStyles from "../../styles/global.module.scss";
+import Editor from "../Editor";
+import LineNumber from "../LineNumber";
+import { ClosingCurlyBrace, JsonKey, OpeningCurlyBrace } from "../Shared";
 
 const lines = [
 	<><OpeningCurlyBrace/></>,
@@ -21,7 +21,7 @@ const lines = [
 ];
 
 const PackageJson: FC = () => (
-  <div className={styles.container}>
+  <div className={globalStyles.container}>
     <LineNumber count={lines.length}></LineNumber>
     <Editor>
       {lines.map((line, idx) => (

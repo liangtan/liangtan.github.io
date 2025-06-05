@@ -1,7 +1,7 @@
 import { type FC } from "react";
-import styles from "./AboutMe.module.scss";
-import Editor from "./Editor";
-import LineNumber from "./LineNumber";
+import gloablStyles from "../../styles/global.module.scss";
+import Editor from "../Editor";
+import LineNumber from "../LineNumber";
 import {
   Colon,
   Comment,
@@ -13,8 +13,8 @@ import {
   StringLiteral,
   TypeName,
   VariableName,
-} from "./Shared";
-import { TypingEffect } from "./TypingEffect";
+} from "../Shared";
+import { TypingEffect } from "../TypingEffect";
 
 const lines = [
   <Comment>// Hi there! It's-a-me 👋</Comment>,
@@ -54,7 +54,7 @@ const lines = [
 ];
 
 const AboutMe: FC = () => (
-  <div className={styles.container}>
+  <div className={gloablStyles.container}>
     <LineNumber count={lines.length + 1}></LineNumber>
     <Editor>
       {lines.map((line, idx) => (

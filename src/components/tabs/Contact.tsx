@@ -1,18 +1,19 @@
 import { type FC } from "react";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { email, github, linkedin } from "../../constants/contacts";
+import Editor from "../Editor";
+import IconWrapper from "../IconWrapper";
+import LineNumber from "../LineNumber";
+import { Comment, Const, EqualSign, StringLiteral } from "../Shared";
 import styles from "./Contact.module.scss";
-import Editor from "./Editor";
-import IconWrapper from "./IconWrapper";
-import LineNumber from "./LineNumber";
-import { Comment, Const, EqualSign, StringLiteral } from "./Shared";
 
 const lines = [
   <><Comment>// find me on the internet</Comment></>,
   <>
     <Const>const</Const> email <EqualSign/>{" "}
     <StringLiteral>
-      "<a href="mailto:liangtan@me.com" style={{ color: "inherit", textDecoration: "none" }}>
-      liangtan@me.com
+      "<a href={`mailto:${email}`} style={{ color: "inherit", textDecoration: "none" }}>
+      { email }
     </a>"
     </StringLiteral>
     {"; "}
@@ -24,8 +25,8 @@ const lines = [
     <Const>const</Const>{" "}
     github <EqualSign/>{" "}
     <StringLiteral>
-      "<a href="https://github.com/liangtan" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
-        https://github.com/liangtan
+      "<a href={github} target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+        {github}
       </a>"
     </StringLiteral>
     {"; "}
@@ -37,8 +38,8 @@ const lines = [
     <Const>const</Const>{" "}
     linkedin <EqualSign/>{" "}
     <StringLiteral>
-      "<a href="https://linkedin.com/in/liangtan521" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
-        https://linkedin.com/in/liangtan521
+      "<a href={linkedin} target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+        {linkedin}
       </a>"
     </StringLiteral>
     {"; "}
