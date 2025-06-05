@@ -50,7 +50,7 @@ export const lineNumberStyle: React.CSSProperties = {
   textAlign: "right",
   userSelect: "none",
   lineHeight: "1.5em",
-  borderRight: `1px solid ${colors.gutter}`,
+  // borderRight: `1px solid ${colors.gutter}`,
 };
 
 export const codeStyle: React.CSSProperties = {
