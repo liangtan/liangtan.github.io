@@ -21,10 +21,9 @@ const lines = [
     </Comment>
   </>,
   <>
-    <Const>const</Const>{" "}
-    github <EqualSign/>{" "}
+    <Const>const</Const> github <EqualSign/>{" "}
     <StringLiteral>
-      "<a href={github} target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+      "<a href={github} target="_blank" style={{ color: "inherit", textDecoration: "none" }}>
         {github}
       </a>"
     </StringLiteral>
@@ -37,7 +36,7 @@ const lines = [
     <Const>const</Const>{" "}
     linkedin <EqualSign/>{" "}
     <StringLiteral>
-      "<a href={linkedin} target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+      "<a href={linkedin} target="_blank" style={{ color: "inherit", textDecoration: "none" }}>
         {linkedin}
       </a>"
     </StringLiteral>

@@ -5,6 +5,7 @@ export const tabBarStyle: React.CSSProperties = {
   display: "flex",
   backgroundColor: "#1e1e1e",
   borderBottom: `1px solid ${colors.gutter}`,
+  alignItems: "center"
 };
 
 export const tabStyle: React.CSSProperties = {

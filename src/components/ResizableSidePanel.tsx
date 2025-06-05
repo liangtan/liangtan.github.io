@@ -12,37 +12,45 @@ const ResizableSidePanel: React.FC<{ children: React.ReactNode }> = ({ children 
   const startWidth = useRef(0);
 
   useEffect(() => {
-    function onMouseMove(e: MouseEvent) {
-      if (!isDragging.current) {
-        return;
-      }
+    const onMove = (e: MouseEvent | TouchEvent) => {
+      if (!isDragging.current) return;
 
-      const deltaX = e.clientX - startX.current;
+      const clientX =
+        e instanceof TouchEvent ? e.touches[0]?.clientX : (e as MouseEvent).clientX;
+
+      const deltaX = clientX - startX.current;
       let newWidth = startWidth.current + deltaX;
-      newWidth = Math.max(newWidth, MIN_WIDTH);
-      newWidth = Math.min(newWidth, MAX_WIDTH);
+      newWidth = Math.max(MIN_WIDTH, Math.min(newWidth, MAX_WIDTH));
       setWidth(newWidth);
-    }
+    };
 
-    function onMouseUp() {
+    const onUp = () => {
       isDragging.current = false;
-    }
+    };
 
-    window.addEventListener("mousemove", onMouseMove);
-    window.addEventListener("mouseup", onMouseUp);
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mouseup", onUp);
+    window.addEventListener("touchmove", onMove);
+    window.addEventListener("touchend", onUp);
 
     return () => {
-      window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("mouseup", onMouseUp);
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("mouseup", onUp);
+      window.removeEventListener("touchmove", onMove);
+      window.removeEventListener("touchend", onUp);
     };
   }, []);
 
-  function onMouseDown(e: React.MouseEvent) {
+  const startDragging = (
+    e: React.MouseEvent | React.TouchEvent
+  ) => {
     isDragging.current = true;
-    startX.current = e.clientX;
+    const clientX =
+      "touches" in e ? e.touches[0].clientX : e.clientX;
+    startX.current = clientX;
     startWidth.current = width;
     e.preventDefault();
-  }
+  };
 
   return (
     <div className={styles.layout}>
@@ -53,7 +61,8 @@ const ResizableSidePanel: React.FC<{ children: React.ReactNode }> = ({ children 
         {children}
         <div
           className={styles.resizer}
-          onMouseDown={onMouseDown}
+          onMouseDown={startDragging}
+          onTouchStart={startDragging}
           onDoubleClick={() => setWidth(240)}
         />
       </div>
