@@ -1,9 +1,8 @@
 import React from "react";
 import { Navigate, Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import AboutMe from "./components/AboutMe";
-import Contact from "./components/Contact";
 import TabBar from "./components/TabBar";
 import { fullEditorStyle } from "./constants/styles";
+import { routes } from "./routes/Routes";
 
 const App: React.FC = () => {
   return (
@@ -12,8 +11,15 @@ const App: React.FC = () => {
         <TabBar />
         <Routes>
           <Route path="/" element={<Navigate to="/about-me" replace />} />
-          <Route path="/about-me" element={<AboutMe />} />
-          <Route path="/contact" element={<Contact />} />
+          {
+            routes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={route.element}
+              />
+            ))
+          }
         </Routes>
       </Router>
     </div>

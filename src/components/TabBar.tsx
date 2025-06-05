@@ -1,18 +1,14 @@
 import type { FC } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { activeTabStyle, tabBarStyle, tabStyle } from "../constants/styles";
-
-const tabs = [
-  { name: "about-me.tsx", path: "/about-me" },
-  { name: "contact.tsx", path: "/contact" },
-];
+import { routes } from "../routes/Routes";
 
 const TabBar: FC = () => {
   const location = useLocation();
 
   return (
     <div style={tabBarStyle}>
-      {tabs.map((tab) => (
+      {routes.map((tab) => (
         <Link
           key={tab.name}
           to={tab.path}

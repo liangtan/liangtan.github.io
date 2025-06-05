@@ -14,6 +14,7 @@ import {
   TypeName,
   VariableName,
 } from "./Shared";
+import { TypingEffect } from "./TypingEffect";
 
 const lines = [
   <Comment>// Hi there! It's-a-me 👋</Comment>,
@@ -25,7 +26,7 @@ const lines = [
   </>,
   <>
     <Const>const</Const>{" "}
-    <VariableName>role</VariableName>{" "}
+    <VariableName>title</VariableName>{" "}
     <EqualSign/>{" "}
     <StringLiteral>"Chief Code Officer 🧠💻"</StringLiteral>;
   </>,
@@ -48,16 +49,18 @@ const lines = [
   </>,
   <>
     {"}"}
-  </>
+  </>,
+  <br/>
 ];
 
 const AboutMe: FC = () => (
   <div className={styles.container}>
-    <LineNumber count={lines.length}></LineNumber>
+    <LineNumber count={lines.length + 1}></LineNumber>
     <Editor>
       {lines.map((line, idx) => (
         <div key={idx}>{line}</div>
       ))}
+      <TypingEffect texts={['sayHi();']}></TypingEffect>
     </Editor>
   </div>
 );

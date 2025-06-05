@@ -34,6 +34,10 @@ export const TypeName: FC<{ children: ReactNode }> = ({ children }) => (
   <SyntaxSpan color={colors.cyan}>{children}</SyntaxSpan>
 );
 
+export const JsonKey: FC<{ children: ReactNode }> = ({ children }) => (
+  <SyntaxSpan color={colors.cyan}>"{children}"</SyntaxSpan>
+);
+
 export const VariableName: FC<{ children: ReactNode }> = ({ children }) => (
   <SyntaxSpan color={colors.offWhite}>{children}</SyntaxSpan>
 );
