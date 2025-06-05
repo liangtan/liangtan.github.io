@@ -4,8 +4,14 @@ interface IconWrapperProps {
   children: ReactNode;
 }
 
-const IconWrapper: FC<IconWrapperProps> = ({ children }: { children: ReactNode }) => (
-  <span style={{ verticalAlign: "middle", marginRight: 6, display: "inline-block" }}>
+const iconStyle: React.CSSProperties = {
+  lineHeight: "1em", // to not increase the line height
+  verticalAlign: "middle",
+  display: "inline-block"
+};
+
+const IconWrapper: FC<IconWrapperProps> = ({ children }) => (
+  <span style={iconStyle}>
     {children}
   </span>
 );

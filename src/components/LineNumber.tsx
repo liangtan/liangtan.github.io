@@ -2,13 +2,13 @@ import type { FC } from "react";
 import { lineNumberStyle } from "../constants/styles";
 
 interface LineNumberProps {
-  count: number;
+  numLines: number;
 }
 
-const LineNumber: FC<LineNumberProps> = ({ count }: { count: number }) => {
+const LineNumber: FC<LineNumberProps> = ({ numLines }: { numLines: number }) => {
   return (
     <div style={lineNumberStyle}>
-      {Array.from({ length: count }, (_, i) => (
+      {Array.from({ length: numLines }, (_, i) => (
         <div key={i}>{i + 1}</div>
       ))}
     </div>
