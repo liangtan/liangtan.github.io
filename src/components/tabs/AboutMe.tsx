@@ -12,6 +12,7 @@ import {
   TypeName,
   VariableName,
 } from "../Shared";
+import { TypingEffect } from "../TypingEffect";
 
 const lines = [
   <Comment>// Hi there! It's-a-me 👋</Comment>,
@@ -55,6 +56,7 @@ const AboutMe: FC = () => (
     {lines.map((line, index) => (
       <div key={index}>{line}</div>
     ))}
+    <TypingEffect texts={["sayHi();"]}></TypingEffect>
   </EditorWithLineNumber>
 );
 
