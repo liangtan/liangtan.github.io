@@ -11,5 +11,11 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      var redirect = window.location.href.includes(".github.io") && !window.location.href.includes("#");
+      if (redirect) {
+        window.location.href = window.location.pathname.replace("/", "/#/") + window.location.search;
+      }
+    </script>
   </body>
 </html>
