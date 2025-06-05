@@ -44,6 +44,7 @@ export default function FileExplorer() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.header}>Explorer</div>
       {/* directory */}
       <div>
         <div
@@ -52,8 +53,6 @@ export default function FileExplorer() {
           role="button"
           tabIndex={0}
           onKeyDown={(e) => { if (e.key === "Enter") toggleSrc(); }}
-          aria-expanded={!srcCollapsed}
-          aria-label="Toggle src folder"
         >
           {srcCollapsed ? (
             <FiFolderPlus className={styles.icon} />
