@@ -6,16 +6,18 @@ import ResizableSidebar from "./components/ResizableSidePanel";
 import TabBar from "./components/TabBar";
 import { fullEditorStyle } from "./constants/styles";
 import { routes } from "./routes/Routes";
+import globalStyles from "./styles/global.module.scss";
 
 const App: React.FC = () => {
   return (
     <div style={fullEditorStyle}>
       <Router>
-        <TabBar />
-        <section className={styles.content}>
+        <div className={globalStyles.container}>
           <ResizableSidebar>
             <FileExplorer/>
           </ResizableSidebar>
+          <section className={styles.content}>
+          <TabBar />
           <Routes>
             <Route path="/" element={<Navigate to="/about-me" replace />} />
             {
@@ -29,6 +31,7 @@ const App: React.FC = () => {
             }
           </Routes>
         </section>
+        </div>
       </Router>
     </div>
   );
