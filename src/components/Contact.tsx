@@ -1,18 +1,16 @@
 import { type FC } from "react";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
-import { codeWrapperStyle } from "../constants/styles";
 import styles from "./Contact.module.scss";
 import Editor from "./Editor";
 import IconWrapper from "./IconWrapper";
 import LineNumber from "./LineNumber";
-import { Comment, Const, FunctionName, StringLiteral } from "./Shared";
+import { Comment, Const, EqualSign, StringLiteral } from "./Shared";
 
 const lines = [
   <><Comment>// find me on the internet</Comment></>,
   <>
-    <Const>const</Const>{" "}
-    <FunctionName>email</FunctionName>{" "}
-    = <StringLiteral>
+    <Const>const</Const> email <EqualSign/>{" "}
+    <StringLiteral>
       "<a href="mailto:liangtan@me.com" style={{ color: "inherit", textDecoration: "none" }}>
       liangtan@me.com
     </a>"
@@ -24,8 +22,8 @@ const lines = [
   </>,
   <>
     <Const>const</Const>{" "}
-    <FunctionName>github</FunctionName>{" "}
-    = <StringLiteral>
+    github <EqualSign/>{" "}
+    <StringLiteral>
       "<a href="https://github.com/liangtan" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
         https://github.com/liangtan
       </a>"
@@ -37,8 +35,8 @@ const lines = [
   </>,
   <>
     <Const>const</Const>{" "}
-    <FunctionName>linkedin</FunctionName>{" "}
-    = <StringLiteral>
+    linkedin <EqualSign/>{" "}
+    <StringLiteral>
       "<a href="https://linkedin.com/in/liangtan521" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
         https://linkedin.com/in/liangtan521
       </a>"
@@ -47,22 +45,13 @@ const lines = [
     <Comment>
     // <IconWrapper><FiLinkedin/></IconWrapper>
     </Comment>
-  </>,
-  <>1</>,
-  <>2</>,
-  <>3</>,
-  <>4</>,
-  <>5</>,
-  <>6</>,
-  <>7</>,
-  <>8</>,
-  <>9</>,
-  <>0</>
+  </>
 ];
 
 const Contact: FC = () => {
   return (
-    <div style={codeWrapperStyle}>
+    <div className={styles.container}>
+    {/* <div style={codeWrapperStyle}> */}
       <LineNumber count={lines.length}></LineNumber>
       <Editor>
         {lines.map((line, i) => (

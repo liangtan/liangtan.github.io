@@ -44,7 +44,7 @@ export const codeWrapperStyle: React.CSSProperties = {
 
 export const lineNumberStyle: React.CSSProperties = {
   backgroundColor: colors.background,
-  color: colors.comment,
+  color: colors.gray,
   padding: "0 16px",
   textAlign: "right",
   userSelect: "none",
