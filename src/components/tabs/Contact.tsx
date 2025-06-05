@@ -1,9 +1,8 @@
 import { type FC } from "react";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { email, github, linkedin } from "../../constants/contacts";
-import Editor from "../Editor";
+import EditorWithLineNumber from "../EditorWithLineNumber";
 import IconWrapper from "../IconWrapper";
-import LineNumber from "../LineNumber";
 import { Comment, Const, EqualSign, StringLiteral } from "../Shared";
 import styles from "./Contact.module.scss";
 
@@ -49,20 +48,14 @@ const lines = [
   </>
 ];
 
-const Contact: FC = () => {
-  return (
-    <div className={styles.container}>
-    {/* <div style={codeWrapperStyle}> */}
-      <LineNumber count={lines.length}></LineNumber>
-      <Editor>
-        {lines.map((line, i) => (
-          <div key={i} className={styles.line}>
-            <span>{line}</span>
-          </div>
-        ))}
-      </Editor>
-    </div>
-  );
-};
+const Contact: FC = () => (
+  <EditorWithLineNumber numLines={lines.length}>
+    {lines.map((line, index) => (
+      <div key={index} className={styles.line}>
+        <span>{line}</span>
+      </div>
+    ))}
+  </EditorWithLineNumber>
+);
 
 export default Contact;

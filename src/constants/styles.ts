@@ -32,7 +32,7 @@ export const fullEditorStyle: React.CSSProperties = {
   backgroundColor: colors.background,
   color: colors.foreground,
   fontFamily: "'Fira Code', monospace",
-  fontSize: "14px",
+  fontSize: "16px",
   overflow: "hidden",
 };
 
@@ -45,6 +45,7 @@ export const codeWrapperStyle: React.CSSProperties = {
 export const lineNumberStyle: React.CSSProperties = {
   backgroundColor: colors.background,
   color: colors.gray,
+  width: "20px",
   padding: "0 16px",
   textAlign: "right",
   userSelect: "none",
@@ -54,7 +55,7 @@ export const lineNumberStyle: React.CSSProperties = {
 
 export const codeStyle: React.CSSProperties = {
   backgroundColor: colors.background,
-  paddingLeft: "16px",
+  paddingLeft: "8px",
   whiteSpace: "pre",
   lineHeight: "1.5em",
   flex: 1,

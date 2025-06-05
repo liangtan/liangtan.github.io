@@ -1,7 +1,5 @@
 import { type FC } from "react";
-import globalStyles from "../../styles/global.module.scss";
-import Editor from "../Editor";
-import LineNumber from "../LineNumber";
+import EditorWithLineNumber from "../EditorWithLineNumber";
 import { ClosingCurlyBrace, JsonKey, OpeningCurlyBrace } from "../Shared";
 
 const lines = [
@@ -21,14 +19,11 @@ const lines = [
 ];
 
 const PackageJson: FC = () => (
-  <div className={globalStyles.container}>
-    <LineNumber count={lines.length}></LineNumber>
-    <Editor>
-      {lines.map((line, idx) => (
-        <div key={idx}>{line}</div>
-      ))}
-    </Editor>
-  </div>
+	<EditorWithLineNumber numLines={lines.length}>
+		{lines.map((line, idx) => (
+			<div key={idx}>{line}</div>
+		))}
+	</EditorWithLineNumber>
 );
 
 export default PackageJson;
