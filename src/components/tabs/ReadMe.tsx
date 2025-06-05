@@ -39,12 +39,10 @@ const skills = [
 - [LinkedIn](${linkedin})
 `;
 
-export const ReadMe: React.FC = () => {
-  return (
-    <div className="prose prose-invert max-w-none p-6 font-mono text-sm text-gray-200">
-      <ReactMarkdown>{markdown}</ReactMarkdown>
-    </div>
-  );
-};
+export const ReadMe: React.FC = () => (
+  <div>
+    <ReactMarkdown>{markdown}</ReactMarkdown>
+  </div>
+);
 
 export default ReadMe;

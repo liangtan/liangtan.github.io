@@ -1,0 +1,36 @@
+.container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: #ccc;
+  user-select: none;
+  padding: 8px;
+}
+
+.file, .folderHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.15s ease;
+}
+
+.file:hover, .folderHeader:hover {
+  background-color: #333;
+}
+
+.selected {
+  background-color: #0e639c;
+  color: white;
+}
+
+.folderContent {
+  margin-left: 16px;
+  margin-top: 4px;
+}
+
+.icon {
+  flex-shrink: 0;
+  font-size: 16px;
+}
