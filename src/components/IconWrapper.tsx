@@ -1,11 +1,10 @@
-import type { ReactNode } from "react";
-import React from "react";
+import type { FC, ReactNode } from "react";
 
 interface IconWrapperProps {
   children: ReactNode;
 }
 
-const IconWrapper: React.FC<IconWrapperProps> = ({ children }) => (
+const IconWrapper: FC<IconWrapperProps> = ({ children }: { children: ReactNode }) => (
   <span style={{ verticalAlign: "middle", marginRight: 6, display: "inline-block" }}>
     {children}
   </span>

@@ -1,5 +1,4 @@
-import type { ReactNode } from "react";
-import React from "react";
+import type { FC, ReactNode } from "react";
 import { colors } from "../constants/colors";
 
 interface SyntaxSpanProps {
@@ -7,30 +6,30 @@ interface SyntaxSpanProps {
   color: string;
 }
 
-const SyntaxSpan: React.FC<SyntaxSpanProps> = ({ children, color }) => (
+const SyntaxSpan: FC<SyntaxSpanProps> = ({ children, color }) => (
   <span style={{ color }}>{children}</span>
 );
 
-export const Comment: React.FC<{ children: ReactNode }> = ({ children }) => (
+export const Comment: FC<{ children: ReactNode }> = ({ children }) => (
   <SyntaxSpan color={colors.comment}>{children}</SyntaxSpan>
 );
 
-export const Keyword: React.FC<{ children: ReactNode }> = ({ children }) => (
+export const Keyword: FC<{ children: ReactNode }> = ({ children }) => (
   <SyntaxSpan color={colors.orange}>{children}</SyntaxSpan>
 );
 
-export const StringLiteral: React.FC<{ children: ReactNode }> = ({ children }) => (
+export const StringLiteral: FC<{ children: ReactNode }> = ({ children }) => (
   <SyntaxSpan color={colors.red}>{children}</SyntaxSpan>
 );
 
-export const Const: React.FC<{ children: ReactNode }> = ({ children }) => (
+export const Const: FC<{ children: ReactNode }> = ({ children }) => (
   <SyntaxSpan color={colors.yellow}>{children}</SyntaxSpan>
 );
 
-export const FunctionName: React.FC<{ children: ReactNode }> = ({ children }) => (
+export const FunctionName: FC<{ children: ReactNode }> = ({ children }) => (
   <SyntaxSpan color={colors.green}>{children}</SyntaxSpan>
 );
 
-export const TypeName: React.FC<{ children: ReactNode }> = ({ children }) => (
+export const TypeName: FC<{ children: ReactNode }> = ({ children }) => (
   <SyntaxSpan color={colors.cyan}>{children}</SyntaxSpan>
 );

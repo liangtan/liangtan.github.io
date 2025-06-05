@@ -1,6 +1,7 @@
-import React from "react";
-import { codeStyle, fullEditorStyle } from "../constants/styles";
+import { type FC } from "react";
+import { fullEditorStyle } from "../constants/styles";
 import styles from "./AboutMe.module.scss";
+import Editor from "./Editor";
 import LineNumber from "./LineNumber";
 import {
   Comment,
@@ -37,17 +38,15 @@ const lines = [
   </>
 ];
 
-const AboutMe: React.FC = () => (
+const AboutMe: FC = () => (
   <div style={fullEditorStyle}>
     <div className={styles.container}>
       <LineNumber count={lines.length}></LineNumber>
-      <pre style={codeStyle}>
-        <code>
-          {lines.map((line, idx) => (
-            <div key={idx}>{line}</div>
-          ))}
-        </code>
-      </pre>
+      <Editor>
+        {lines.map((line, idx) => (
+          <div key={idx}>{line}</div>
+        ))}
+      </Editor>
     </div>
   </div>
 );

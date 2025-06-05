@@ -1,3 +1,4 @@
+import type { FC } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { activeTabStyle, tabBarStyle, tabStyle } from "../constants/styles";
 
@@ -6,7 +7,7 @@ const tabs = [
   { name: "contact.tsx", path: "/contact" },
 ];
 
-const TabBar: React.FC = () => {
+const TabBar: FC = () => {
   const location = useLocation();
 
   return (
