@@ -6,11 +6,11 @@ interface EditorProps {
 }
 
 const Editor: FC<EditorProps> = ({ children }) => (
-  <pre style={codeStyle}>
-    <code>
+  <code>
+    <pre style={codeStyle}>
       { children }
-    </code>
-  </pre>
+    </pre>
+  </code>
 );
 
 export default Editor;

@@ -15,7 +15,7 @@ export const TypingEffect: FC<TypingEffectProps> = ({
   pauseTime = 1500,
 }) => {
   const [index, setIndex] = useState(0);
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -36,7 +36,7 @@ export const TypingEffect: FC<TypingEffectProps> = ({
     if (isDeleting) {
       timeoutRef.current = setTimeout(() => {
         setText((prev) => prev.slice(0, -1));
-        if (text === '') {
+        if (text === "") {
           setIsDeleting(false);
           setIndex((prev) => (prev + 1) % texts.length);
         }

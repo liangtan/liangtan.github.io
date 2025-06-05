@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import TabBar from "./components/TabBar";
 import { fullEditorStyle } from "./constants/styles";
 import { routes } from "./routes/Routes";
@@ -7,7 +7,7 @@ import { routes } from "./routes/Routes";
 const App: React.FC = () => {
   return (
     <div style={fullEditorStyle}>
-      <Router>
+      <HashRouter>
         <TabBar />
         <Routes>
           <Route path="/" element={<Navigate to="/about-me" replace />} />
@@ -21,7 +21,7 @@ const App: React.FC = () => {
             ))
           }
         </Routes>
-      </Router>
+      </HashRouter>
     </div>
   );
 };
