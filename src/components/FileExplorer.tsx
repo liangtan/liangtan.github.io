@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FiFile, FiFolderMinus, FiFolderPlus } from 'react-icons/fi';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { routes } from '../routes/Routes';
 import styles from './FileExplorer.module.scss';
 
 interface FileItem {
@@ -8,15 +9,8 @@ interface FileItem {
   path: string;
 }
 
-const filesRoot: FileItem[] = [
-  { name: "package.json", path: "/package" },
-  { name: "README.md", path: "/readme" }
-];
-
-const filesSrc: FileItem[] = [
-  { name: "about-me.tsx", path: "/about-me" },
-  { name: "contact.tsx", path: "/contact" }
-];
+const filesRoot: FileItem[] = routes.filter(route => route.level === "root");
+const filesSrc: FileItem[] = routes.filter(route => route.level === "src");;
 
 export default function FileExplorer() {
   const [srcCollapsed, setSrcCollapsed] = useState(false);
