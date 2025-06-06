@@ -1,19 +1,19 @@
 import { type FC } from "react";
 import EditorWithLineNumber from "../EditorWithLineNumber";
-import { ClosingCurlyBrace, JsonKey, OpeningCurlyBrace } from "../Shared";
+import { ClosingCurlyBrace, JsonKey, OpeningCurlyBrace, StringLiteral } from "../Shared";
 
 const lines = [
 	<><OpeningCurlyBrace/></>,
-	<>{"  "}<JsonKey>name</JsonKey>: "liang-tan",</>,
-	<>{"  "}<JsonKey>role</JsonKey>: "code-monkey",</>,
-	<>{"  "}<JsonKey>version</JsonKey>: "1.0.0",</>,
+	<>{"  "}<JsonKey>name</JsonKey>: <StringLiteral>"liang-tan"</StringLiteral>,</>,
+	<>{"  "}<JsonKey>role</JsonKey>: <StringLiteral>"code-monkey"</StringLiteral>,</>,
+	<>{"  "}<JsonKey>version</JsonKey>: <StringLiteral>"1.0.0"</StringLiteral>,</>,
 	<>{"  "}<JsonKey>dependencies</JsonKey>: <OpeningCurlyBrace/></>,
-	<>{"    "}<JsonKey>curiosity</JsonKey>: "^∞",</>,
-    <>{"    "}<JsonKey>coffee</JsonKey>: "&gt;=1 cups/day,"</>,
-	<>{"    "}<JsonKey>tea</JsonKey>: "&gt;=3 cups/day"</>,
+	<>{"    "}<JsonKey>curiosity</JsonKey>: <StringLiteral>"^∞"</StringLiteral>,</>,
+    <>{"    "}<JsonKey>coffee</JsonKey>: <StringLiteral>"&gt;=1 cups/day</StringLiteral>,</>,
+	<>{"    "}<JsonKey>tea</JsonKey>: <StringLiteral>"&gt;=3 cups/day"</StringLiteral></>,
 	<>{"  "}<ClosingCurlyBrace/>{","}</>,
 	<>{"  "}<JsonKey>devDependencies</JsonKey>: <OpeningCurlyBrace/></>,
-	<>{"    "}<JsonKey>ai</JsonKey>: "^1.0.0"</>,
+	<>{"    "}<JsonKey>ai</JsonKey>: <StringLiteral>"^1.0.0"</StringLiteral></>,
 	<>{"  "}<ClosingCurlyBrace/></>,
 	<><ClosingCurlyBrace/></>
 ];
