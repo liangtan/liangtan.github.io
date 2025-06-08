@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import EditorWithLineNumber from "../EditorWithLineNumber";
+import Editor from "../Editor";
 import {
   Colon,
   Comment,
@@ -52,12 +52,12 @@ const lines = [
 ];
 
 const AboutMe: FC = () => (
-  <EditorWithLineNumber numLines={lines.length + 1}>
+  <Editor numLines={lines.length + 1}>
     {lines.map((line, index) => (
       <div key={index}>{line}</div>
     ))}
     <TypingEffect texts={["sayHi();"]}></TypingEffect>
-  </EditorWithLineNumber>
+  </Editor>
 );
 
 export default AboutMe;

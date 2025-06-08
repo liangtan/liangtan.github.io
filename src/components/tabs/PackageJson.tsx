@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import EditorWithLineNumber from "../EditorWithLineNumber";
+import Editor from "../Editor";
 import { ClosingCurlyBrace, JsonKey, OpeningCurlyBrace, StringLiteral } from "../Shared";
 
 const lines = [
@@ -19,11 +19,11 @@ const lines = [
 ];
 
 const PackageJson: FC = () => (
-	<EditorWithLineNumber numLines={lines.length}>
+	<Editor numLines={lines.length}>
 		{lines.map((line, idx) => (
 			<div key={idx}>{line}</div>
 		))}
-	</EditorWithLineNumber>
+	</Editor>
 );
 
 export default PackageJson;
