@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { github, linkedin, portfolio } from '../../constants/contacts';
+import styles from './ReadMe.module.scss';
 
 const markdown = `
 # 👋 Hi, I'm Liang
@@ -40,7 +41,7 @@ const skills = [
 `;
 
 export const ReadMe: React.FC = () => (
-  <div>
+  <div className={styles.container}>
     <ReactMarkdown>{markdown}</ReactMarkdown>
   </div>
 );

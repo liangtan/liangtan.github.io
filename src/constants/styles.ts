@@ -46,12 +46,10 @@ export const codeWrapperStyle: React.CSSProperties = {
 export const lineNumberStyle: React.CSSProperties = {
   backgroundColor: colors.background,
   color: colors.gray,
-  width: "20px",
   padding: "0 16px",
   textAlign: "right",
   userSelect: "none",
   lineHeight: "1.5em",
-  // borderRight: `1px solid ${colors.gutter}`,
 };
 
 export const codeStyle: React.CSSProperties = {
@@ -61,4 +59,6 @@ export const codeStyle: React.CSSProperties = {
   lineHeight: "1.5em",
   flex: 1,
   marginTop: 0, // reset browser default margin
+  overflowX: "auto",
+  alignSelf: "flex-start;"
 };

@@ -38,7 +38,7 @@ export default function FileExplorer() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>Explorer</div>
+      <div className={styles.header}>EXPLORER</div>
       {/* directory */}
       <div>
         <div

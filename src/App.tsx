@@ -1,11 +1,7 @@
 import React from "react";
-import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
-import styles from "./App.module.scss";
-import FileExplorer from "./components/FileExplorer";
-import ResizableSidePanel from "./components/ResizableSidePanel";
-import TabBar from "./components/TabBar";
+import { HashRouter } from "react-router-dom";
+import Workbench from "./components/Workbench";
 import { fullEditorStyle } from "./constants/styles";
-import { routes } from "./routes/Routes";
 import globalStyles from "./styles/global.module.scss";
 
 const App: React.FC = () => {
@@ -13,7 +9,8 @@ const App: React.FC = () => {
     <div style={fullEditorStyle}>
       <HashRouter>
         <div className={globalStyles.container}>
-          <ResizableSidePanel>
+          <Workbench></Workbench>
+          {/* <ResizableSidePanel>
             <FileExplorer/>
           </ResizableSidePanel>
           <section className={styles.content}>
@@ -30,7 +27,7 @@ const App: React.FC = () => {
                 ))
               }
             </Routes>
-        </section>
+          </section> */}
         </div>
       </HashRouter>
     </div>
