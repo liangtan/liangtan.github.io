@@ -48,8 +48,7 @@ const lines = [
 ];
 
 const Contact: FC = () => (
-  // <Editor numLines={lines.length}>
-  <Editor numLines={20}>
+  <Editor numLines={lines.length}>
     {lines.map((line, index) => (
       <div key={index} className={styles.line}>
         <span>{line}</span>
