@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#272822" />
+    <title>Liang Tan · Software Engineer</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      //
+      // GitHub Pages has no server-side rewrites, so a hard refresh of a deep
+      // link (e.g. /about-me) 404s. GitHub serves this file for unknown paths;
+      // it redirects to index.html with the original path encoded in the query
+      // string, which the snippet in index.html then restores for the router.
+      //
+      // pathSegmentsToKeep = 0 because this is a user site served at the domain
+      // root (liangtan.github.io), not a project site under a subpath.
+      var pathSegmentsToKeep = 0;
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
